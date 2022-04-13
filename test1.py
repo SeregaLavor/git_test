@@ -16,3 +16,6 @@ my_dict = {
 for k, v in my_dict.items():
     if k == 'foo':
         print(v)
+        for k1, v1 in v.items():
+            if k1 == 'b':
+                print(v1)
