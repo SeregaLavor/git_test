@@ -19,3 +19,5 @@ for k, v in my_dict.items():
         for k1, v1 in v.items():
             if k1 == 'b':
                 print(v1)
+my_list.append(44)
+print(my_list)
