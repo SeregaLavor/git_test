@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
-
-
 {% block title %}{{ context.window.name }}{% endblock %}
-
 {% block content %}
-<div class="card" style="...">
+<h1 class="all-window-title">Окно ПВХ</h1>
+<div class="card center-card" style="width: 18rem;">
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">Name: {{ context.window.name }}</li>
-        <li class="list-group-item">Year: {{ context.window.dl }}</li>
-        <li class="list-group-item">Author: {{ context.window.sh}}</li>
+        <li class="list-group-item">Наименование: {{ context.window.name }}</li>
+        <li class="list-group-item">Ширина: {{ context.window.width }}</li>
+        <li class="list-group-item">Высота: {{ window.height }}</li>
+        <li class="list-group-item">Стоимость: {{ context.window.height}}</li>
     </ul>
 </div>
+
 {% endblock %}

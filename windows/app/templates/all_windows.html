@@ -1,37 +1,36 @@
 {% extends 'base.html' %}
-
-{% block title %}All books{% endblock %}
-
+{% block title %}All windows{% endblock %}
 {% block content %}
-<h1 class="all-windows-title">All books</h1>
+<h1 class="all-windows-title">Окна ПВХ</h1>
 <div class="img-container">
-    <img alt='book' src="https://www.ukrgate.com/eng/wp-content/uploads/2021/02/The-Ukrainian-Book-Institute-Purchases-380.9-Thousand-Books-for-Public-Libraries1.jpeg" width="500">
+<p></p>
+<img alt='window' src="https://klike.net/uploads/posts/2020-04/1587026186_1.jpg" width="400">
 </div>
-    <table class="window-table table table-striped table-hover">
-    <thead>
+  <p></p>
+<li class="logo"><a href="{% url 'all_glasses' %}"><div class="logo"></div>Виды стеклопакетов</a></li>
+<p></p>
+<table class="table table-warning table-striped">
+  <thead>
     <tr>
-        <th scope="col">id</th>
-        <th scope="col">Name</th>
-        <th scope="col">Dl</th>
-        <th scope="col">Sh</th>
-        <th scope="col">Prise</th>
+      <th scope="col">Номер</th>
+      <th scope="col">Наименование</th>
+      <th scope="col">Ширина, мм</th>
+      <th scope="col">Высота, мм</th>
+      <th scope="col">Стоимость, руб</th>
     </tr>
-    </thead>
-    <tbody>
-    {% for window in context.windows %}
-        <tr>
-            <th scope="row">{{ window.id }}</th>
-            <td><a target="_blank" href={% url 'window' window_id=window.id %}>{{ window.name }}</a></td>
-            <td>{{ window.dl }}</td>
-            <td>{{ window.sh }}</td>
-            <td>{{ book.prise }}</td>
-            <td><a target="_blank" href={% url 'review' book_id=book.id %}>отзыв</a></td>
-            <td>{{ review.text }}</td>
-            {#        TODO: add fields#}
-        </tr>
-    {% endfor %}
+  </thead>
+  <tbody>
+  {% for window in context.windows %}
+    <tr>
+      <th scope="row">{{ window.id }}</th>
+      <td><a target="_blank" href={% url 'window' window_id=window.id %}>{{ window.name }}</a></td>
+      <td>{{ window.width }}</td>
+      <td>{{ window.height }}</td>
+      <td>{{ window.price }}</td>
+    </tr>
+  {% endfor %}
 
-
-    </tbody>
+  </tbody>
 </table>
+
 {% endblock %}

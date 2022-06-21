@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}All glasses{% endblock %}
+{% block content %}
+<h1 class="all-glasses-title">Виды стеклопакетов</h1>
+    <div class="img-container">
+        <img alt='glass' src="https://dexen-ru.com/wp-content/uploads/2021/02/razmer-okna.png" width="500">
+    </div>
+    <table class="glass-table table table-striped table-hover">
+        <thead>
+        <tr>
+            <th scope="col">Окно</th>
+            <th scope="col">Стеклопакет</th>
+            <th scope="col">Описание</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for glass in context.glass %}
+            <tr>
+                <th scope="row"><a target="_blank" href={% url 'window' window_id=glass.window.id %}>{{ glass.window.name }}</a></th>
+                <td>{{ glass.glass }}</td>
+                <td>{{ glass.text }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
