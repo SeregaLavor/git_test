@@ -3,4 +3,4 @@ from . import models
 
 
 admin.site.register(models.Window)
-admin.site.register(models.Review)
+admin.site.register(models.Glass)

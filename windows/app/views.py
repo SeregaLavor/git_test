@@ -3,13 +3,12 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from . import models
 
-
 def index(request):
-    return HttpResponse("Hello, world.")
+    return HttpResponse("Welcome")
 
 
 def all_windows(request):
-    windows = models.Windows.objects.all()
+    windows = models.Window.objects.all()
     context = {
         'windows': windows,
     }
@@ -17,16 +16,15 @@ def all_windows(request):
 
 
 def window_detail(request, window_id):
-    book = get_object_or_404(models.Window, id=window_id)
+    window = get_object_or_404(models.Window, id=window_id)
     context = {
         'window': window,
     }
     return render(request, 'window.html', {'context': context})
 
-
-def review(request, review_id):
-    review = get_object_or_404(models.Review, id=review_id)
+def all_glasses(request):
+    glass = models.Glass.objects.all()
     context = {
-        'review': review,
+        'glass': glass,
     }
-    return render(request, 'review.html', {'context': context})
+    return render(request, 'glass.html', {'context': context})
